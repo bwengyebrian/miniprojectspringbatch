@@ -1,0 +1,22 @@
+version: "2"
+services:
+  spring-batch:
+    build: .
+    image: spring-batch:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-batch-mysql
+    depends_on:
+      - mysqldb
+ 
+  mysqldb:
+    image: mysql:8
+    networks:
+      - spring-batch-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=students
+
+networks:
+  spring-batch-mysql: 
