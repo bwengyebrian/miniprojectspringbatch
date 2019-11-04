@@ -10,7 +10,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Integer studentNumber;
+    private Double gpa;
     private String firstName;
     private String lastName;
     @Transient
@@ -25,8 +25,8 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public Student(Integer studentNumber, String firstName, String lastName, LocalDate dateOfBirth) {
-        this.studentNumber = studentNumber;
+    public Student(Double gpa, String firstName, String lastName, LocalDate dateOfBirth) {
+        this.gpa = gpa;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -40,12 +40,12 @@ public class Student {
         this.id = id;
     }
 
-    public Integer getStudentNumber() {
-        return studentNumber;
+    public Double getGpa() {
+        return gpa;
     }
 
-    public void setStudentNumber(Integer studentNumber) {
-        this.studentNumber = studentNumber;
+    public void setGpa(Double gpa) {
+        this.gpa = gpa;
     }
 
     public String getFirstName() {
@@ -84,7 +84,7 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", studentNumber=" + studentNumber +
+                ", gpa=" + gpa +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age='" + age + '\'' +

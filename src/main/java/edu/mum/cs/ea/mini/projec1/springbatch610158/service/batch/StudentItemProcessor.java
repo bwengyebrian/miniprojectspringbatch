@@ -12,12 +12,12 @@ public class StudentItemProcessor implements ItemProcessor<Student,Student>{
     private static final Logger logger = LoggerFactory.getLogger(StudentItemProcessor.class);
     @Override
     public Student process(Student student) throws Exception {
-        Integer studentNumber = student.getStudentNumber();
+        Double gpa = student.getGpa();
         String firstName = student.getFirstName().toUpperCase();
         String lastName = student.getLastName().toUpperCase();
         LocalDate dateOfBirth = LocalDate.now().minusYears(Integer.valueOf(student.getAge()));
         student.setDateOfBirth(dateOfBirth);
-        Student transformedStudent = new Student(studentNumber,firstName,lastName,dateOfBirth);
+        Student transformedStudent = new Student(gpa,firstName,lastName,dateOfBirth);
         logger.info("Converting (" + student + ") into (" + transformedStudent + ")");
         return transformedStudent;
     }

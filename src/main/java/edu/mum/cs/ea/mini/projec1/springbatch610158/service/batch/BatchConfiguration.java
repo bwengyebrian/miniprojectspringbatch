@@ -46,7 +46,7 @@ public class BatchConfiguration {
                 .name("personItemReader")
                 .resource(new ClassPathResource("studentdata.csv"))
                 .delimited()
-                .names(new String[]{"studentNumber","firstName", "lastName","age"})
+                .names(new String[]{"gpa","firstName", "lastName","age"})
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<Student>() {{
                     setTargetType(Student.class);
                 }})
