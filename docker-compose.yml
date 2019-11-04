@@ -2,7 +2,7 @@ version: "2"
 services:
   spring-batch:
     build: .
-    image: spring-batch:latest
+    image: spring-batch
     ports:
       - "8080:8080"
     networks:
